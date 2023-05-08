@@ -10,7 +10,7 @@
 }
 
 .contentarea{
-
+  flex: 1;
 }
 
 header{
@@ -66,7 +66,7 @@ header{
   overflow-y: auto;
 }
 
-.chatlist:: ::-webkit-scrollbar{
+.chatlist::-webkit-scrollbar{
   width: 6px;
   height: 6px;
 }
