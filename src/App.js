@@ -12,7 +12,8 @@ import ChatListem from './components/ChatListemItem';
 
 function App() {
   const [chatlist, setChatlist] = useState([
-    {chatId:1, title:'olá tudo bem ?', avatar:<BsFillPersonPlusFill size={25} color='#919191'/> }
+    {chatId:1, title:'olá tudo bem ?', avatar:<BsFillPersonPlusFill size={25} color='#919191'/> },
+    {chatId:2, title:'olá tudo bem brother ?', avatar:<BsFillPersonPlusFill size={25} color='#919191'/> }
   ]);
   const [activeChat, setActiveChat] = useState({});
 
@@ -47,6 +48,7 @@ function App() {
           {chatlist.map((item, key)=>(
             <ChatListem 
                key={key} 
+               active={activeChat.chatId === chatlist[key].chatId}
                onClick = {()=>setActiveChat(chatlist[key])}
             />
         

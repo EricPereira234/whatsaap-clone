@@ -1,9 +1,9 @@
 import './chatlistItem.css';
 import {BsFillPersonPlusFill } from 'react-icons/bs';
 
-export default function ChatListem({onClick}){
+export default function ChatListem({onClick, active}){
     return(
-        <div className='chatListemItem' onClick={onClick} >
+        <div className={`chatListemItem ${active? 'active': ''}`} onClick={onClick} >
 
             <div className='chatListemItem-avatar'>
                 <BsFillPersonPlusFill size={25} color='#919191'/>
