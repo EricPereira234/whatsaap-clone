@@ -36,10 +36,47 @@
 
 .chat-body{
     flex: 1;
+    padding: 10px 50px;
     overflow-y: auto;
     background-color: #e5ddd5;
     background-size: cover;
     background-position: center;
 }
 
+.chat-emojiarea{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    background-color: #e5ddd5;
+}
 
+.chat-footer {
+    height: 62px;
+    display: flex;
+    align-items: center;
+}
+
+.footer-pre{
+    display: flex;
+    margin: 0 15px;
+    cursor: pointer;
+}
+
+.footer-area{
+    flex: 1;
+}
+
+.footer-area input {
+    width: 100%;
+    height: 40px;
+    border: 0;
+    outline: 0;
+    border-radius: 50px;
+    padding-left: 15px;
+}
+
+.footer-pos{
+    display: flex;
+    margin: 0 15px;
+    cursor: pointer;
+}
