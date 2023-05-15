@@ -16,6 +16,7 @@ function App() {
     {chatId:2, title:'olá tudo bem brother ?', avatar:<BsFillPersonPlusFill size={25} color='#919191'/> }
   ]);
   const [activeChat, setActiveChat] = useState({});
+  const [user, setUser] = useState({id: 123, avatar: '', name: 'Eric'});
 
   return (
     <div className='app-window' >
@@ -59,7 +60,9 @@ function App() {
       <div className='contentarea' >
 
         {activeChat.chatId !== undefined &&
-          <ChatWindow/>
+          <ChatWindow 
+            user={user}
+          />
         }
 
         {activeChat.chatId === undefined &&

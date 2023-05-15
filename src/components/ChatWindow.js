@@ -1,5 +1,5 @@
 import "./chatWindow.css";
-import { useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import EmojiPicker from "emoji-picker-react";
 
 import MessageItem from "./MessageItem";
@@ -13,10 +13,35 @@ import {AiOutlineSend} from 'react-icons/ai';
 import {AiOutlineClose} from 'react-icons/ai';
 import {BsFillMicFill} from 'react-icons/bs';
 
-export default function ChatWindow(){
+export default function ChatWindow({user}){
+    const body = useRef();
     const [emojiOpen, setEmojiOpen] = useState(false);
     const [text, setText] = useState('');
-    const [list, setList] = useState([{},{}]);
+    const [list, setList] = useState([{author: 123, body: 'bla bla..'},
+                                 {author: 1234, body: 'bla bla.....'},
+                                 {author: 123, body: 'bla bla.....'},
+                                 {author: 1234, body: 'bla bla.....'},
+                                 {author: 123, body: 'bla bla.....'},
+                                 {author: 1234, body: 'bla bla.....'},
+                                 {author: 123, body: 'bla bla.....'},
+                                 {author: 1234, body: 'bla bla.....'},
+                                 {author: 123, body: 'bla bla.....'},
+                                 {author: 1234, body: 'bla bla.....'},
+                                 {author: 123, body: 'bla bla.....'},
+                                 {author: 1234, body: 'bla bla.....'},
+                                 {author: 123, body: 'bla bla.....'},
+                                 {author: 1234, body: 'bla bla.....'},
+                                 {author: 123, body: 'bla bla.....'},
+                                 {author: 1234, body: 'bla bla.....'},
+                                 {author: 123, body: 'bla bla.....'}
+                                ]);
+
+    
+useEffect(()=>{
+    if(body.current.scrollHeight > body.current.offsetHeight){
+        body.current.scrollTop = body.current.scrollHeight - body.current.offsetHeight;
+    }
+},[list])
 
     const handleEmojiClick = ()=>{
         setEmojiOpen(true);
@@ -49,11 +74,12 @@ export default function ChatWindow(){
             </div>
 
 
-            <div className="chat-body" >
+            <div ref={body}  className="chat-body" >
                 {list.map((item, key)=>(
                     <MessageItem 
                         key={key}
                         data={item}
+                        user={user}
                     />
                 ))}
             </div>
